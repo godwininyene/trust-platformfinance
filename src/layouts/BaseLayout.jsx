@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react'
-import Navigation from '../components/navigation';
+import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import AOS from "aos";
 import 'aos/dist/aos.css';
