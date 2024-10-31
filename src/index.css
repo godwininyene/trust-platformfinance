@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.btn-primary {
+    @apply font-bold md:gap-2  shadow-md bg-primary text-white rounded-full border;
+}
+
+.btn-secondary{
+    @apply font-bold md:gap-2 bg-gradient-to-t from-teal-600 to-teal-500 shadow-md dark:bg-transparent text-white rounded-full border dark:text-white;
+}
