@@ -9,7 +9,7 @@ import { MdManageAccounts } from 'react-icons/md';
 import { BsFillAwardFill, BsShieldCheck } from 'react-icons/bs';
 import {useEffect, useState } from 'react';
 import {FaCheckCircle} from 'react-icons/fa'
-// import Withdrawal from './Admin/Withdrawal';
+import axios from '../lib/axios';
 
 export default function Investment({ auth }) {
     const pageHeadInfo = {
@@ -25,7 +25,7 @@ export default function Investment({ auth }) {
 
     const getPlans = async ()=>{
         try {
-             const res = await axios('http://127.0.0.1:5000/api/v1/plans');
+             const res = await axios.get('api/v1/plans');
              setPlans(res.data.data.plans)
          } catch (error) {
              console.log(error);
