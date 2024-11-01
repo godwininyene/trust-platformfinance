@@ -282,7 +282,7 @@ export default function Index({ auth }) {
 
                             <div className={`md:flex gap-3 mt-6`}>
                                
-                                <Link to='my_investments' className={`transition-all duration-100 py-3 px-5 mx-2 md:mx-0 rounded-3xl border border-primary  text-primary hover:text-white hover:bg-primary font-bold`}>
+                                <Link to='investment' className={`transition-all duration-100 py-3 px-5 mx-2 md:mx-0 rounded-3xl border border-primary  text-primary hover:text-white hover:bg-primary font-bold`}>
                                     Get Started
                                 </Link>
                                 <Link to='about_us' className={`py-3 px-5 mx-2 md:mx-0 rounded-3xl bg-primary text-white font-bold`}>
@@ -594,8 +594,8 @@ export default function Index({ auth }) {
                                 <h2 className='text-white text-5xl font-black mb-2'>Trust <span className='text-primary'>Platform</span> Trading</h2>
                                 <h3 className='mb-2 text-white font-medium text-2xl'>Skyrocket Your Crypto Trading with Us!</h3>
                                 <div className='mt-12 flex gap-x-3'>
-                                    <Link to='register' className='inline-block text-center text-sm md:text-base font-semibold border border-primary rounded-xl py-2 md:py-4 px-2 md:px-8 transition-all duration-300 bg-primary text-white hover:bg-transparent'>Get Started</Link>
-                                    <Link to='contact-support' className='text-primary  inline-block text-center font-semibold border border-primary rounded-xl  py-2 md:py-4 px-2  md:px-8 transition-all duration-300 hover:bg-primary hover:text-black'>Contact Us</Link>
+                                    <Link to='users/register' className='inline-block text-center text-sm md:text-base font-semibold border border-primary rounded-xl py-2 md:py-4 px-2 md:px-8 transition-all duration-300 bg-primary text-white hover:bg-transparent'>Get Started</Link>
+                                    <Link to='contact_support' className='text-primary  inline-block text-center font-semibold border border-primary rounded-xl  py-2 md:py-4 px-2  md:px-8 transition-all duration-300 hover:bg-primary hover:text-black'>Contact Us</Link>
                                 </div>
 
                             </div>
@@ -674,7 +674,7 @@ export default function Index({ auth }) {
                         </div>
 
                         <div className='text-center mt-12'>
-                            <Link  to='my_investments' className={`py-3 px-5 mx-2 md:mx-0 rounded-3xl bg-primary border-2 border-transparent hover:border-primary hover:bg-transparent text-white font-bold`}>
+                            <Link to='users/register' className={`py-3 px-5 mx-2 md:mx-0 rounded-3xl bg-primary border-2 border-transparent hover:border-primary hover:bg-transparent text-white font-bold`}>
                                 Get Started
                             </Link>
                         </div>
@@ -740,7 +740,7 @@ export default function Index({ auth }) {
                                 </div>
 
                                 <div className='mt-12'>
-                                    <Link  to='my_investments' className={`py-3 px-5 mx-2 md:mx-0 rounded-3xl border-2 border-transparent transition-all duration-200 hover:border-primary bg-primary hover:bg-transparent text-white font-bold`}>
+                                    <Link  to='users/register' className={`py-3 px-5 mx-2 md:mx-0 rounded-3xl border-2 border-transparent transition-all duration-200 hover:border-primary bg-primary hover:bg-transparent text-white font-bold`}>
                                         Get Started
                                     </Link>
                                 </div>

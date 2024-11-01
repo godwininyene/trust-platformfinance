@@ -89,7 +89,7 @@ const Navigation = () => {
               </Link>
             </li>
             <li className={`block w-full md:ml-2`}>
-              <Link to='register' className={`flex items-center justify-center gap-1 text-white py-2 text-center px-3 bg-primary rounded-2xl`}>
+              <Link to='users/register'  className={`flex items-center justify-center gap-1 text-white py-2 text-center px-3 bg-primary rounded-2xl`}>
                 <IoIosPersonAdd className={`inline h-5 w-5`} /> Sign Up
               </Link>
             </li>
@@ -101,7 +101,7 @@ const Navigation = () => {
           <ul className={`text-sm`}>
               <li className={`inline-block`}>
                 <Link to='users/login' className={`flex items-center gap-1 text-white py-1 px-3 transition-all duration-300 border-2 border-transparent hover:bg-transparent hover:border-primary  bg-primary rounded-2xl`}>
-                  <IoIosLogIn className={`inline h-5 w-5`} /> Sign In
+                  <IoIosLogIn className={`inline h-5 w-5`} /> Sign In 
                 </Link>
               </li>
               <li className={`inline-block md:ml-2`}>

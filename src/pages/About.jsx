@@ -107,10 +107,10 @@ export default function About({ auth }) {
 
                             <div className={`md:flex gap-3 mt-6`}>
                                
-                                <Link to='my_investments' className={`transition-all duration-100 py-3 px-5 mx-2 md:mx-0 rounded-3xl border border-primary  text-primary hover:text-white hover:bg-primary font-bold`}>
+                                <Link to='/users/register'  className={`transition-all duration-100 py-3 px-5 mx-2 md:mx-0 rounded-3xl border border-primary  text-primary hover:text-white hover:bg-primary font-bold`}>
                                     Get Started
                                 </Link>
-                                <Link to='about_us' className={`py-3 px-5 mx-2 md:mx-0 rounded-3xl bg-primary text-white font-bold`}>
+                                <Link to='/about_us' className={`py-3 px-5 mx-2 md:mx-0 rounded-3xl bg-primary text-white font-bold`}>
                                     Learn More
                                 </Link>
                             </div>
@@ -230,7 +230,7 @@ export default function About({ auth }) {
                                 </div>
 
                                 <div className='mt-12'>
-                                    <Link  to='my_investments' className={`py-3 px-5 mx-2 md:mx-0 rounded-3xl border-2 border-transparent transition-all duration-200 hover:border-primary bg-primary hover:bg-transparent text-white font-bold`}>
+                                    <Link  to='/users/register' className={`py-3 px-5 mx-2 md:mx-0 rounded-3xl border-2 border-transparent transition-all duration-200 hover:border-primary bg-primary hover:bg-transparent text-white font-bold`}>
                                         Get Started
                                     </Link>
                                 </div>
@@ -316,7 +316,7 @@ export default function About({ auth }) {
                         </div>
 
                         <div className='text-center mt-12'>
-                            <Link  to='my_investments' className={`py-3 px-5 mx-2 md:mx-0 rounded-3xl bg-primary border-2 border-transparent hover:border-primary hover:bg-transparent text-white font-bold`}>
+                            <Link  to='/users/register' className={`py-3 px-5 mx-2 md:mx-0 rounded-3xl bg-primary border-2 border-transparent hover:border-primary hover:bg-transparent text-white font-bold`}>
                                 Get Started
                             </Link>
                         </div>

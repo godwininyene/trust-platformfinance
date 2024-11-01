@@ -26,7 +26,7 @@ const HomeBanner = () => {
                     <Link to='about_us' className={`py-3 px-5 mx-2 md:mx-0 rounded-3xl bg-primary text-white font-bold`}>
                       Learn More
                     </Link>
-                    <Link to='my_investments' className={`py-3 px-5 mx-2 md:mx-0 rounded-3xl border border-primary bg-black bg-opacity-50 text-white hover:bg-black font-bold`}>
+                    <Link to='investment' className={`py-3 px-5 mx-2 md:mx-0 rounded-3xl border border-primary bg-black bg-opacity-50 text-white hover:bg-black font-bold`}>
                       Start Investing
                     </Link>
                   </div>
