@@ -189,11 +189,6 @@ export default function Investment({ auth }) {
 
     return (
         <div>
-           {/* <Head title="Investment Plans">
-                <meta name="description" content="Trust Platform  Investments" />
-                <meta name="keywords" content="Trust Platform, Trust Platform Investments, Crypto Investments" />
-            </Head> */}
-
             <PageBanner page={pageHeadInfo} />
 
           
@@ -262,75 +257,7 @@ export default function Investment({ auth }) {
                     </p>
                 </div>
                 <div className="max-w-6xl mx-auto">
-                    {/* <div className='gap-x-5 gap-y-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
-                       {
-                        plans && plans.map((plan, i)=>(
-                            <div key={plan.id} className='mt-2'>
-                            <div className='h-full bg-dark rrelative border-[3px] border-primary rounded-xl px-5 pb-3' data-aos="flip-left" data-aos-easing="ease-out-cubic">
-                                <div className='h-16 w-16 rounded-full border-[3px] border-primary mx-auto flex items-center justify-center text-4xl font-black bg-white relative -top-10'>{i + 1}</div>
-                                <div className="w-12 h-12 rounded-full border-[3px] border-primary  bg-white text-black   mx-auto flex items-center justify-center text-2xl p-7 font-black relative -top-14 left-5">{plan.percentage}%</div>
-                                <div className='pb-3 px-2'>
-                                    <h3 className='uppercase text-xl font-semibold text-white'>
-                                        {plan.name}
-                                    </h3>
-                                    <h3 className='uppercase text-2xl font-semibold mb-5 text-primary'>
-                                        After {plan.mining_duration + " "+ plan.timing_parameter}
-                                    </h3>
-                                
-                                    <div className='flex mb-5' data-aos="fade-up" data-aos-delay="200" data-aos-duration="500">
-                                        <div className='flex-shrink-0 mr-2 items-center'>
-                                            <FaCheckCircle className='text-primary text-2xl'/>
-                                        </div>
-                                        <div className=''>
-                                            <div className=''>
-                                                <small className='text-lg text-white  block'>Minimum Deposit - ${plan.min_deposit.toLocaleString()}</small>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div className='flex mb-5' data-aos="fade-up" data-aos-delay="200" data-aos-duration="500">
-                                        <div className='flex-shrink-0 mr-2 items-center'>
-                                            <FaCheckCircle className='text-primary text-2xl'/>
-                                        </div>
-                                        <div className=''>
-                                            <div className=''>
-                                                <small className='text-lg text-white  block'>Maximum Deposit - ${plan.max_deposit.toLocaleString()}</small>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div className='flex mb-5' data-aos="fade-up" data-aos-delay="200" data-aos-duration="500">
-                                        <div className='flex-shrink-0 mr-2 items-center'>
-                                            <FaCheckCircle className='text-primary text-2xl'/>
-                                        </div>
-                                        <div className=''>
-                                            <div className=''>
-                                                <small className='text-lg text-white  block'>Referral Bonus - {plan.ref_bonus}%</small>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div className='flex mb-5' data-aos="fade-up" data-aos-delay="200" data-aos-duration="500">
-                                        <div className='flex-shrink-0 mr-2 items-center'>
-                                            <FaCheckCircle className='text-primary text-2xl'/>
-                                        </div>
-                                        <div className=''>
-                                            <div className=''>
-                                                <small className='text-lg text-white  block'>Principal Return -  {plan.return_principal ? 'Yes' : 'No'}</small>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <div className='px-2 pb-4'>
-                                    <Link href='register' className={`text-primary w-full inline-block text-center font-semibold border ${plan.name =='Gold' ? 'bg-primary text-white hover:bg-transparent hover:text-primary' : 'bg-transparent'} border-primary rounded-lg py-4 px-8 transition-all duration-300 hover:bg-primary hover:text-black`}>Get Started</Link>
-                                </div>
-                            </div>
-                        </div>
-                        ))
-                       }
-
-                    </div> */}
+                  
 
                      <div className='gap-x-5 gap-y-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
 
@@ -394,7 +321,7 @@ export default function Investment({ auth }) {
 
                                 </div>
                                 <div className='px-2 pb-4'>
-                                    <Link to='register' className={`text-primary w-full inline-block text-center font-semibold border ${plan.name =='Gold' ? 'bg-primary text-white hover:bg-transparent hover:text-primary' : 'bg-transparent'} border-primary rounded-lg py-4 px-8 transition-all duration-300 hover:bg-primary hover:text-black`}>Get Started</Link>
+                                    <Link to='/users/register' className={`text-primary w-full inline-block text-center font-semibold border ${plan.name =='Gold' ? 'bg-primary text-white hover:bg-transparent hover:text-primary' : 'bg-transparent'} border-primary rounded-lg py-4 px-8 transition-all duration-300 hover:bg-primary hover:text-black`}>Get Started</Link>
                                 </div>
                             </div>
                         </div>

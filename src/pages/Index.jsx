@@ -521,7 +521,7 @@ export default function Index({ auth }) {
 
                                 </div>
                                 <div className='px-2 pb-4'>
-                                    <Link to='register' className={`text-primary w-full inline-block text-center font-semibold border ${plan.name =='Gold' ? 'bg-primary text-white hover:bg-transparent hover:text-primary' : 'bg-transparent'} border-primary rounded-lg py-4 px-8 transition-all duration-300 hover:bg-primary hover:text-black`}>Get Started</Link>
+                                    <Link to='users/register' className={`text-primary w-full inline-block text-center font-semibold border ${plan.name =='Gold' ? 'bg-primary text-white hover:bg-transparent hover:text-primary' : 'bg-transparent'} border-primary rounded-lg py-4 px-8 transition-all duration-300 hover:bg-primary hover:text-black`}>Get Started</Link>
                                 </div>
                             </div>
                         </div>
