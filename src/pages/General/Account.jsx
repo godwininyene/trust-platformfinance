@@ -12,10 +12,12 @@ import { FaChartLine } from 'react-icons/fa';
 import ChangePasswordForm from './ChangePasswordForm';
 import LoadingIndicator from '../../components/LoadingIndicator';
 import axios from '../../lib/axios';
-
+import { useNavigate } from 'react-router-dom';
+import { logout } from '../../utils/logout';
 
 export default function Account() {
     const user = JSON.parse(localStorage.getItem('user'));
+    const navigate = useNavigate()
     const [darkMode, setDarkMode] = useState(document.documentElement.classList.contains('dark'));
     const changeThemeMode = (darkmode) => {
         if (darkmode == true) {
@@ -90,6 +92,16 @@ export default function Account() {
         fetchStats();
         fetchInvestments()
     }, [])
+
+    const handleLogout = async()=>{
+        setProcessing(true);
+       try{
+            const res = await logout(navigate);
+            setProcessing(false)
+       }catch(err){
+        setProcessing(false)
+       }
+    }
     return (
         <>
 
@@ -318,9 +330,9 @@ export default function Account() {
                         <div className="my-2">
                             <ToggleButton initialState={darkMode} text="Dark Mode" onToggle={(state) => changeThemeMode(state)} />
                         </div>
-                        <Link method="post" to='logout' as="button" className={`font-bold flex justify-center items-center gap-3 bg-primary dark:bg-transparent text-slate-100 rounded-full w-full py-2 px-3 md:px-4 border dark:text-slate-300 `}>
+                        <button onClick={handleLogout} className={`font-bold flex justify-center items-center gap-3 bg-primary dark:bg-transparent text-slate-100 rounded-full w-full py-2 px-3 md:px-4 border dark:text-slate-300 `}>
                             <HiOutlineLogout className={`h-6 w-6`} /> <span className={`text-xs md:text-base`}> Logout </span>
-                        </Link>
+                        </button>
                     </section>
                 </div>
             </div>
