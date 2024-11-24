@@ -99,7 +99,7 @@ const Login = () => {
                                 </div>
 
                                 <p className='inline-block text-sm text-right'>
-                                    <Link to='' className='inline-block ml-1 text-blue-600 dark:text-blue-400' >Forgot your password?</Link>
+                                    <Link to='/users/forgotPassword' className='inline-block ml-1 text-blue-600 dark:text-blue-400' >Forgot your password?</Link>
                                 </p>
                             </div>
 

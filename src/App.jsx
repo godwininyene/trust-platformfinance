@@ -6,8 +6,12 @@ import About from './pages/About';
 import Investment from './pages/Investment';
 import Contact from './pages/Contact';
 import FAQs from './pages/FAQs';
+//Auth Pages
 import Login from './auth/Login';
 import Register from './auth/Register';
+import ForgotPassWord from './auth/ForgotPassword'
+import ResetPassword from './auth/ResetPassword'
+//Others
 import AuthenticatedLayout from './layouts/AuthenticatedLayout';
 import NotFound from './pages/NotFound';
 import Error from './components/Error';
@@ -44,6 +48,8 @@ function App() {
       <Route path='/users' element={<GuestLayout />}>
         <Route path='login' element={<Login />}></Route>
         <Route path='register' element={<Register />}></Route>
+        <Route path='forgotPassword' element={<ForgotPassWord />}></Route>
+        <Route path='resetPassword' element={<ResetPassword />}></Route>
       </Route>
 
       <Route path='/manage' element={<AuthenticatedLayout />}   errorElement={<Error />} loader={async({request})=> await requireAuth(request)}>
