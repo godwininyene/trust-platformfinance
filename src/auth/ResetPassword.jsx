@@ -2,7 +2,7 @@ import phoneMock from '../assets/images/about_dark.png';
 import logo from '../assets/images/logo.png';
 import LoadingIndicator from '../components/LoadingIndicator';
 import InputError from '../components/InputError';
-import { Link} from 'react-router-dom';
+import { Link, useNavigate} from 'react-router-dom';
 import { useState } from 'react';
 import axios from '../lib/axios';
 
@@ -12,10 +12,12 @@ const Login = () => {
    const[processing, setProcessing] = useState(false)
     const [errors, setErrors] = useState({email:''})
     const[message, setMessage] = useState()
+    const navigate = useNavigate();
 
 
     const searchParams = new URLSearchParams(document.location.search)
     const token = searchParams.get('t')
+    let pathname;
 
     const submit = async(e) => {
         e.preventDefault();
@@ -29,6 +31,12 @@ const Login = () => {
             if(response.data.status === 'success'){
                 alert("Password Reset Successfully.")
                 // setMessage(response.data.message)
+                if(response.data.data.user.role === 'user'){
+                    pathname = '/manage/investor/dashboard'
+                }else if(response.data.data.user.role === 'admin'){
+                    pathname ='/manage/admin/dashboard'
+                }
+                navigate(pathname)
             }
             setProcessing(false)
         } catch (err) {
