@@ -69,6 +69,9 @@ const Deposit = ({ onBack }) => {
                   <label htmlFor="bank" className='text-sm block'> {selectedOption.payOption == 'bank' ? 'Account Number' : 'Wallet Address'} </label>
                   <p className="text-lg font-bold">{selectedOption.accountNumber}</p>
                 </div>
+                {selectedOption.image && (
+                    <img src={selectedOption.image} alt="" className='h-[150px]'/>
+                )}
                 {selectedOption.extra && <div className="relative col-span-2">
                 <label htmlFor="bank" className='text-sm block text-green-500'> <strong>Deposit NOTICE:</strong> </label>
                 <p className="text-sm">{ selectedOption.extra }</p>

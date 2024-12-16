@@ -16,6 +16,7 @@ const PaymentOptions = () => {
   const [deleting, setDeleting] = useState(false);
   const [selectedOption, setSelectedOption] = useState();
   const [editModal, setEditModal] = useState(false);
+  const[message, setMessage] = useState()
 
   useEffect(() => {
     fetchPayOption();
@@ -50,6 +51,7 @@ const PaymentOptions = () => {
       setProcessing(false);
     })
     .catch((err) => {
+        console.log(err)
       setProcessing(false);
       setErrors(err.response.data.errors);
     });
@@ -75,8 +77,21 @@ const PaymentOptions = () => {
         setProcessing(false);
     })
     .catch((err) => {
-      setProcessing(false);
-      setErrors(err.response.data.errors);
+        console.log(err)
+        if (err && !err.response) {
+            alert(err);
+          } else { 
+              if(err.response.data.message){
+                  setMessage(err.response.data.message)
+              }
+            const errors = {};
+            err.response.data.errors.forEach(el =>{
+               for(let key in el){
+                errors[key] = el[key]
+               }
+            })
+            setErrors(errors)
+        }
     });
   }
 
@@ -104,13 +119,6 @@ const PaymentOptions = () => {
   };
 
   return (
-    // <AuthenticatedLayout
-    //         user={auth.user}
-    //         header={<h2 className="font-semibold text-xl leading-tight flex items-center gap-2">
-    //             <BsBank className={`h-5 w-5`} /> <span> Payment Options </span>
-    //         </h2>}
-    //     >
-    //       <Head title="Investment Plans" />
         <>
             <section>
               <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 max-w-5xl">
@@ -159,13 +167,13 @@ const PaymentOptions = () => {
                                 </aside>
                             </div>
                         </div>
-                        <div className="mb-5 relative">
+                        {/* <div className="mb-5 relative">
                             <Checkbox name="display_status" id="display_status" type="checkbox" className='' 
                                 />
                             <label htmlFor="display_status" className='inline-block pl-4 text-sm'>
                                 Show Payment Option
                             </label>
-                        </div>
+                        </div> */}
                         <div className="mb-5 relative">
                             {/* {error && (<p className="text-sm text-red-500 mb-4">{ error }</p>)} */}
                             {errors && errors.length > 0 && (
@@ -175,7 +183,7 @@ const PaymentOptions = () => {
                                 </div>
                                 <ul className="mt-3 list-disc list-inside text-sm text-red-600">
                                     {errors.map((error, index) => (
-                                    // Use Object.keys() to iterate over the keys of the error object
+                                  
                                     Object.keys(error).map((key) => (
                                         <li key={`${index}-${key}`}>{`${key}: ${error[key]}`}</li>
                                     ))
@@ -208,6 +216,9 @@ const PaymentOptions = () => {
                                 <h1 className="font-black text-3xl space-x-2">
                                     { payOption.accountNumber }
                                 </h1>
+                               {payOption.image && (
+                                 <img src={payOption.image} alt="" className='h-[150px]'/>
+                               )}
                                 <small>{ payOption.extra } </small>
                                 <p className="text-right w-full mb-0">
                                     <span className="inline-flex items-center gap-2 text-lg font-semibold  mb-5"> 
@@ -257,7 +268,7 @@ const PaymentOptions = () => {
                             <div className="grid grid-cols-2 items-start gap-4">
                                 <aside>
                                     <label htmlFor="image" className='text-sm block'>Image/Barcode </label>
-                                    <input type="file" id='image' name="image" placeholder="Upload Image/Barcode" accept="image"
+                                    <input type="file" id='image' name="image" placeholder="Upload Image/Barcode" accept="image/*"
                                         className='peer w-full py-3 px-1 rounded-md bg-slate-100 text-slate-900 transition-all duration-300 border-0 border-b-[3px] border-b-transparent focus:border-b-primary focus:outline-0 focus:ring-0  focus:bg-white focus:shadow-lg'
                                     />
                                 </aside>
@@ -269,13 +280,13 @@ const PaymentOptions = () => {
                                 </aside>
                             </div>
                         </div>
-                        <div className="mb-5 relative">
+                        {/* <div className="mb-5 relative">
                             <Checkbox name="displayStatus" id="displayStatus" type="checkbox" className=''
                                 />
                             <label htmlFor="displayStatus" className='inline-block pl-4 text-sm'>
                                 Show Payment Option
                             </label>
-                        </div>
+                        </div> */}
                         <div className="mb-5 relative">
                             {/* {error && (<p className="text-sm w-full text-red-500 mb-4">{ error }</p>)} */}
                             {errors.length > 0 && (
@@ -285,7 +296,7 @@ const PaymentOptions = () => {
                                     </div>
                                     <ul className="mt-3 list-disc list-inside text-sm text-red-600">
                                         {errors.map((error, index) => (
-                                        // Use Object.keys() to iterate over the keys of the error object
+                                       
                                         Object.keys(error).map((key) => (
                                             <li key={`${index}-${key}`}>{`${key}: ${error[key]}`}</li>
                                         ))
