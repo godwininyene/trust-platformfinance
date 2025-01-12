@@ -27,7 +27,6 @@ const Login = () => {
             let data = new FormData(e.target)
             let jsonData = Object.fromEntries(data);
             const response = await axios.patch(`api/v1/users/resetPassword/${token}`, jsonData);
-            console.log(response)
             if(response.data.status === 'success'){
                 alert("Password Reset Successfully.")
                 // setMessage(response.data.message)

@@ -153,7 +153,7 @@ const FundAccount = ({user, onBack, onFunded = () => Object}) => {
                                         className='peer w-full py-3 px-5 rounded-md bg-slate-100 text-slate-900 transition-all duration-300 border-0 border-b-[3px] border-b-transparent focus:border-b-primary focus:outline-0 focus:ring-0  focus:bg-white focus:shadow-lg'
                                     />
                                 </div>
-                                <div className={`${message == '' ? 'mb-5' : 'mb-1'} relative`}>
+                                {/* <div className={`${message == '' ? 'mb-5' : 'mb-1'} relative`}>
                                     <label htmlFor="" className='text-sm block'>Funding Channel <small>(optional)</small> </label>
                                     <select
                                         name="channel" defaultValue="" 
@@ -164,7 +164,7 @@ const FundAccount = ({user, onBack, onFunded = () => Object}) => {
                                         <option value="Bank Deposit">Bank Deposit</option>
                                         <option value="Paypal">Paypal</option>
                                     </select>
-                                </div>
+                                </div> */}
                                 {message !== '' && <p className={'text-sm text-red-600 mb-2'}>
                                     {message}
                                 </p>}
