@@ -38,43 +38,41 @@ function App() {
 
   const router = createBrowserRouter(createRoutesFromElements(
     <>
-      {/* <Route path='/' element={<BaseLayout />}>
-        // <Route index element={<Index />} />
-        // <Route path='about_us' element={<About />} />
-        // <Route path='investment' element={<Investment />} />
-        // <Route path='contact_support' element={<Contact />} />
-        // <Route path='FAQs' element={<FAQs />} />
-      </Route> */}
-{/* 
-      // <Route path='/users' element={<GuestLayout />}>
-      //   <Route path='login' element={<Login />}></Route>
-      //   <Route path='register' element={<Register />}></Route>
-      //   <Route path='forgotPassword' element={<ForgotPassWord />}></Route>
-      //   <Route path='resetPassword' element={<ResetPassword />}></Route>
-      // </Route> */}
+      <Route path='/' element={<BaseLayout />}>
+        <Route index element={<Index />} />
+        <Route path='about_us' element={<About />} />
+        <Route path='investment' element={<Investment />} />
+        <Route path='contact_support' element={<Contact />} />
+        <Route path='FAQs' element={<FAQs />} />
+      </Route>
+
+      <Route path='/users' element={<GuestLayout />}>
+        <Route path='login' element={<Login />}></Route>
+        <Route path='register' element={<Register />}></Route>
+        <Route path='forgotPassword' element={<ForgotPassWord />}></Route>
+        <Route path='resetPassword' element={<ResetPassword />}></Route>
+     </Route>
 
       <Route path='/manage' element={<AuthenticatedLayout />}   errorElement={<Error />} loader={async({request})=> await requireAuth(request)}>
         {/* Admin Related Routes */}
-        {/* // <Route path='admin/dashboard' element={<Dashboard />}></Route>
-        // <Route path='admin/plans' element={<Plans />}></Route>
-        // <Route path='admin/investments' element={<Investments />}></Route>
-        // <Route path='admin/users' element={<Users />}></Route>
-        // <Route path='admin/transactions' element={<Transactions />}></Route>
-        // <Route path='admin/profile' element={<Account />}></Route>
-        // <Route path='admin/faq' element={<FaqManager />}></Route>
-        // <Route path='admin/payment_options' element={<PaymentOptions />}></Route> */}
+        <Route path='admin/dashboard' element={<Dashboard />}></Route>
+        <Route path='admin/plans' element={<Plans />}></Route>
+        <Route path='admin/investments' element={<Investments />}></Route>
+        <Route path='admin/users' element={<Users />}></Route>
+        <Route path='admin/transactions' element={<Transactions />}></Route>
+        <Route path='admin/profile' element={<Account />}></Route>
+        <Route path='admin/faq' element={<FaqManager />}></Route>
+        <Route path='admin/payment_options' element={<PaymentOptions />}></Route>
 
         {/* Investor Related Routes */}
-        {/* // <Route path='investor/dashboard' element={<InvestorDashboard />}></Route>
-        // <Route path='investor/investments' element={<InvestorInvestments />}></Route>
-        // <Route path='investor/transactions' element={<InvestorTransactions />}></Route>
-        // <Route path='investor/profile' element={<Account />}></Route> */}
-      
+        <Route path='investor/dashboard' element={<InvestorDashboard />}></Route>
+        <Route path='investor/investments' element={<InvestorInvestments />}></Route>
+        <Route path='investor/transactions' element={<InvestorTransactions />}></Route>
+        <Route path='investor/profile' element={<Account />}></Route>
       </Route>
-      // <Route path='complete_registration' element={<CompleteRegistration />}></Route>
-      // <Route path='pending_verification' element={<PendingVerification />}></Route>
-      <Route path="*" element={<SuspendedAccount />} />
-    
+      <Route path='complete_registration' element={<CompleteRegistration />}></Route>
+      <Route path='pending_verification' element={<PendingVerification />}></Route>
+      <Route path="*" element={<NotFound/>} />
     </> 
   ))
   return (
