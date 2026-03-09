@@ -24,7 +24,7 @@ const Renewal = () => {
         {/* LEFT */}
         <div className="w-full lg:w-auto">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-orange-500">
-            tradelink.com
+            Trust-platformfinance
           </h1>
 
           <div className="w-full max-w-md h-[2px] bg-gray-400 mt-6"></div>
