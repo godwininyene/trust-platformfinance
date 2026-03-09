@@ -6,51 +6,43 @@ const Renewal = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     setLoading(true);
 
-    // Fake request delay
     setTimeout(() => {
       setLoading(false);
       setSuccess(true);
 
-      // Hide success after a few seconds
-      setTimeout(() => {
-        setSuccess(false);
-      }, 4000);
+      setTimeout(() => setSuccess(false), 4000);
     }, 2000);
   };
 
   return (
     <div className="min-h-screen bg-gray-200 relative overflow-hidden">
 
-      <div className="max-w-7xl mx-auto flex justify-between px-6 py-24">
+      <div className="max-w-7xl mx-auto px-6 py-16 flex flex-col lg:flex-row items-start lg:justify-between gap-12">
 
         {/* LEFT */}
-        <div>
-          <h1 className="text-6xl font-bold text-orange-500">
-            trust-platformfincance
+        <div className="w-full lg:w-auto">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-orange-500">
+            tradelink.com
           </h1>
 
-          <div className="w-[420px] h-[2px] bg-gray-400 mt-6"></div>
+          <div className="w-full max-w-md h-[2px] bg-gray-400 mt-6"></div>
         </div>
 
 
-        {/* RIGHT FORM */}
-        <div className="w-[420px] bg-white p-8 rounded-md shadow-lg">
+        {/* FORM */}
+        <div className="w-full max-w-md bg-white p-6 sm:p-8 rounded-md shadow-lg">
 
-          <h2 className="text-xl text-gray-700 mb-6 leading-snug">
+          <h2 className="text-lg sm:text-xl text-gray-700 mb-6 leading-snug">
             For general inquiries, please use the form below.
           </h2>
 
-
-          {/* SUCCESS MESSAGE */}
           {success && (
             <div className="mb-4 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded">
               ✅ Your message has been submitted successfully!
             </div>
           )}
-
 
           <form onSubmit={handleSubmit} className="space-y-4">
 
@@ -86,18 +78,14 @@ const Renewal = () => {
 
             <label className="flex items-start gap-2 text-xs text-gray-700">
               <input type="checkbox" required className="mt-1" />
-              I consent to having this information stored in order to process my
-              inquiry.
+              I consent to having this information stored in order to process my inquiry.
             </label>
 
-            {/* Fake captcha */}
             <div className="border rounded p-4 flex items-center gap-2 text-sm text-gray-600">
               <input type="checkbox" required />
               I'm not a robot
             </div>
 
-
-            {/* SUBMIT BUTTON */}
             <button
               type="submit"
               disabled={loading}
@@ -115,10 +103,10 @@ const Renewal = () => {
       </div>
 
 
-      {/* Decorative bottom background */}
-      <div className="absolute -bottom-40 left-0 w-full h-64 hi">
+      {/* Bottom background */}
+      <div className="absolute -bottom-40 left-0 w-full h-56">
         <div className="absolute bottom-0 w-full h-full bg-teal-500 rounded-t-[50%]"></div>
-        <div className="absolute bottom-0 w-full h-40 bg-teal-200 rounded-t-[60%]"></div>
+        <div className="absolute bottom-0 w-full h-32 bg-teal-200 rounded-t-[60%]"></div>
       </div>
 
     </div>
